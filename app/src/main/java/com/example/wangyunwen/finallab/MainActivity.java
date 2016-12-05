@@ -3,11 +3,14 @@ package com.example.wangyunwen.finallab;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TimePicker;
@@ -31,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
         myAdapter = new MyAdapter(this, list);
         todoList.setAdapter(myAdapter);
+
+        todoList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("---", "");
+                Intent intent = new Intent(MainActivity.this, ItemDetails.class);
+                startActivity(intent);
+            }
+        });
 
         addButton.setOnClickListener(new View.OnClickListener() {
             public void setDialogView(View v) {
