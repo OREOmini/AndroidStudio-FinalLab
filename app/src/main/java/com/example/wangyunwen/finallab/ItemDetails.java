@@ -19,7 +19,7 @@ public class ItemDetails extends AppCompatActivity {
     private MyTimer myTimer;
 
     public void putTest() {
-        year = 2016;
+        year = 2017;
         month = 12;
         day = 6;
         hour = 23;
